@@ -3,57 +3,241 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Professional Profile</title>
-    <link rel="stylesheet" href="style.css">
+    <title>For Priyanka</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- CSS STYLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            background-image: linear-gradient(to top, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .container {
+            position: relative;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 90%;
+            z-index: 10;
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            color: #ff4b4b;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #555;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        /* --- HEART ANIMATION --- */
+        .heart-container {
+            margin-bottom: 20px;
+        }
+        
+        .heart {
+            background-color: #ff4b4b;
+            display: inline-block;
+            height: 50px;
+            position: relative;
+            transform: rotate(-45deg);
+            width: 50px;
+            animation: heartbeat 1.2s infinite;
+        }
+
+        .heart:before,
+        .heart:after {
+            content: "";
+            background-color: #ff4b4b;
+            border-radius: 50%;
+            height: 50px;
+            position: absolute;
+            width: 50px;
+        }
+
+        .heart:before { top: -25px; left: 0; }
+        .heart:after { left: 25px; top: 0; }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1) rotate(-45deg); }
+            50% { transform: scale(1.1) rotate(-45deg); }
+            100% { transform: scale(1) rotate(-45deg); }
+        }
+
+        /* --- BUTTONS --- */
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            height: 60px; /* Space for moving button */
+            position: relative;
+        }
+
+        .btn {
+            padding: 12px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .yes-btn {
+            background-color: #ff4b4b;
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 75, 75, 0.4);
+            z-index: 2;
+        }
+
+        .yes-btn:hover {
+            transform: scale(1.1);
+            background-color: #ff2e2e;
+        }
+
+        .no-btn {
+            background-color: #e0e0e0;
+            color: #333;
+            position: absolute; /* Allows it to move freely */
+            left: 55%; /* Start next to the Yes button */
+        }
+
+        /* --- HIDDEN MESSAGE --- */
+        #message-box {
+            display: none;
+            margin-top: 30px;
+        }
+
+        #message-box h2 {
+            color: #ff4b4b;
+            font-family: 'Pacifico', cursive;
+            font-size: 2rem;
+        }
+
+        #message-box p {
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+        
+        .image-gif {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Portfolio</div>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section id="hero">
-        <h1>Hi, I'm Gowtham P an ECE Student & Designer</h1>
-        <p>Specializing in Embedded Systems and PCB Design.</p>
-    </section>
-
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am a 6th-semester Electronics and Communication Engineering student at Jayalakshmi Institute of Technology. I am passionate about building hardware solutions and working with microcontrollers and Embedded system.</p>
-    </section>
-
-    <section id="skills">
-        <h2>Technical Skills</h2>
-        <div class="skills-container">
-            <span>Embedded C / C++</span>
-            <span>Arduino / ATmega328P</span>
-            <span>Linux</span>
-            <span>Python</span>
+    <div class="container" id="main-card">
+        <div class="heart-container">
+            <div class="heart" id="heart-icon"></div>
         </div>
-    </section>
-
-    <section id="projects">
-        <h2>Key Projects</h2>
-        <div class="project-grid">
-            <div class="card">
-                <h3>Firefighting Robot</h3>
-                <p>An autonomous robot built with Arduino and flame sensors to detect and extinguish fires.</p>
-            </div>
-            <div class="card">
-                <h3>Automatic Motor Control</h3>
-                <p>A real-time system for farmers using ATmega328P to automate water pumps.</p>
-            </div>
+        
+        <h1 id="question">Priyanka...</h1>
+        <p id="sub-text">Will you be my Valentine?</p>
+        
+        <div class="buttons">
+            <button onclick="acceptLove()" class="btn yes-btn">YES!</button>
+            <button id="no-btn" onmouseover="moveButton()" class="btn no-btn">No</button>
         </div>
-    </section>
 
-    <footer>
-        <p>&copy; 2026 | Built for my Engineering Portfolio</p>
-    </footer>
+        <div id="message-box">
+            <h2>I knew you'd say Yes! ❤️</h2>
+            <p>I love you so much, Priyanka!</p>
+            <img src="https://media.giphy.com/media/26BRv0ThflsHCqDrG/giphy.gif" alt="Love Gif" class="image-gif">
+        </div>
+    </div>
+
+    <script>
+        /* --- JAVASCRIPT --- */
+        
+        // 1. Function to handle the YES click
+        function acceptLove() {
+            // Hide the buttons and question
+            document.querySelector('.buttons').style.display = 'none';
+            document.getElementById('question').style.display = 'none';
+            document.getElementById('sub-text').style.display = 'none';
+            
+            // Show the message
+            const msgBox = document.getElementById('message-box');
+            msgBox.style.display = 'block';
+            
+            // Make the heart beat crazy fast
+            document.getElementById('heart-icon').style.animationDuration = "0.2s";
+            
+            // Change background to celebration
+            document.body.style.backgroundImage = "linear-gradient(to top, #ff0844 0%, #ffb199 100%)";
+            
+            // Add some confetti (simple emojis falling)
+            createConfetti();
+        }
+
+        // 2. Function to move the NO button when hovered
+        function moveButton() {
+            const noBtn = document.getElementById('no-btn');
+            
+            // Calculate random position
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 100);
+            
+            // Apply new position
+            noBtn.style.position = 'fixed'; // Change to fixed to move anywhere on screen
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
+        }
+
+        // 3. Simple Confetti Effect
+        function createConfetti() {
+            setInterval(() => {
+                const heart = document.createElement('div');
+                heart.innerHTML = '❤️';
+                heart.style.position = 'fixed';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.top = '-10px';
+                heart.style.fontSize = Math.random() * 20 + 20 + 'px';
+                heart.style.animation = 'fall 3s linear';
+                document.body.appendChild(heart);
+                
+                setTimeout(() => {
+                    heart.remove();
+                }, 3000);
+            }, 100);
+        }
+
+        // Add the fall animation style dynamically
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes fall {
+                to { transform: translateY(100vh); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+
+    </script>
 </body>
 </html>
